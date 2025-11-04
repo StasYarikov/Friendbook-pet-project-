@@ -4,7 +4,7 @@ An Android social companion app designed for teens to connect with friends, disc
 
 ## Features
 
-*   **Smart Matching:** Discover and connect with new people based on shared interests.
+*   **Smart Matching:** Discover the percent of match between your friends to find their best options.
 *   **Gift Idea Generator:** Struggling to find the perfect gift? Use the integrated AI to generate unique and personalized gift ideas for your friends.
 *   **Inner Circle:** A dedicated space to keep your closest friends nearby and manage your most important connections.
 
