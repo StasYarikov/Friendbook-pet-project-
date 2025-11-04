@@ -22,7 +22,7 @@ This app is built with modern Android development tools and a clean architecture
 
 1.  Clone the repository:
     ```bash
-    git clone
+    git clone https://github.com/StasYarikov/Friendbook-pet-project-.git
     ```
 2.  Open the project in Android Studio.
 3.  Add your LLM API key to `local.properties`:
