@@ -1,6 +1,8 @@
-package com.example.friendbook
+package com.example.friendbook.presentation.homeScreen
 
 import androidx.lifecycle.ViewModel
+import com.example.friendbook.data.entity.Friend
+import com.example.friendbook.domain.repository.Repository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
