@@ -1,4 +1,4 @@
-package com.example.friendbook
+package com.example.friendbook.data.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,9 +1,11 @@
-package com.example.friendbook
+package com.example.friendbook.data.db
 
 import android.content.Context
 import androidx.room.Database
-import androidx.room.RoomDatabase
 import androidx.room.Room
+import androidx.room.RoomDatabase
+import com.example.friendbook.data.entity.Friend
+import com.example.friendbook.data.db.dao.FriendDao
 
 @Database(
     entities = [Friend::class],

@@ -1,4 +1,6 @@
-package com.example.friendbook
+package com.example.friendbook.data
+
+import com.example.friendbook.data.entity.Friend
 
 object FriendGenerator {
 
@@ -10,7 +12,7 @@ object FriendGenerator {
     fun generateFriends(numberOfFriends: Int) {
         val list = mutableListOf<Friend>()
         for (i in 1..numberOfFriends) {
-            list.add(Friend(i.toLong(),listOfNames.random(), listOfPhones.random()))
+            list.add(Friend(i.toLong(), listOfNames.random(), listOfPhones.random()))
         }
         listOfFriends = list
     }

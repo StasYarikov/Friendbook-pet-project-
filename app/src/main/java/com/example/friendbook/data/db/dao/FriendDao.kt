@@ -1,4 +1,4 @@
-package com.example.friendbook
+package com.example.friendbook.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,12 +6,13 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.example.friendbook.data.entity.Friend
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FriendDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.Companion.REPLACE)
     suspend fun insert(friend: Friend): Long
 
     @Update

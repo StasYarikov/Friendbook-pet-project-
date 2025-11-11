@@ -1,5 +1,7 @@
-package com.example.friendbook
+package com.example.friendbook.domain.repository
 
+import com.example.friendbook.data.db.dao.FriendDao
+import com.example.friendbook.data.entity.Friend
 import kotlinx.coroutines.flow.Flow
 
 class Repository(private val friendDao: FriendDao) {
