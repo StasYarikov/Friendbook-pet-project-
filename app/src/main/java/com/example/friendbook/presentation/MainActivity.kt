@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         val application = applicationContext as App
-        val factory = FriendsViewModelFactory(application.repository)
+        val factory = FriendsViewModelFactory(application.friendsRepository, application.chatMessagesRepository)
         viewModel = ViewModelProvider(this, factory)[HomeScreenViewModel::class.java]
 
         setContent {

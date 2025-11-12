@@ -23,7 +23,8 @@ fun HomeScreen(
 ) {
     val viewModel: HomeScreenViewModel = viewModel(
         factory = FriendsViewModelFactory(
-            (LocalContext.current.applicationContext as App).repository
+            (LocalContext.current.applicationContext as App).friendsRepository,
+            (LocalContext.current.applicationContext as App).chatMessagesRepository
         )
     )
     val friends by viewModel.friendsList.collectAsState(initial = emptyList())
