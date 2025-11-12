@@ -4,7 +4,7 @@ import com.example.friendbook.data.db.dao.FriendDao
 import com.example.friendbook.data.entity.Friend
 import kotlinx.coroutines.flow.Flow
 
-class Repository(private val friendDao: FriendDao) {
+class FriendsRepository(private val friendDao: FriendDao) {
 
     suspend fun addFriend(name: String, phone: String, avatarUrl: String? = null): Long {
         val friend = Friend(name = name, phone = phone, avatarUrl = avatarUrl)

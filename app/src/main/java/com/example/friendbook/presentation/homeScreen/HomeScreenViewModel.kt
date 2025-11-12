@@ -3,18 +3,17 @@ package com.example.friendbook.presentation.homeScreen
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.friendbook.data.entity.Friend
-import com.example.friendbook.domain.repository.Repository
-import kotlinx.coroutines.flow.FlowCollector
+import com.example.friendbook.domain.repository.FriendsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class HomeScreenViewModel(
-    private val friendRepository: Repository
+    private val friendRepository: FriendsRepository
 ) : ViewModel() {
 
-    var _friendsList = MutableStateFlow<List<Friend>>(emptyList())
+    val _friendsList = MutableStateFlow<List<Friend>>(emptyList())
     val friendsList = _friendsList.asStateFlow()
 
     private val _isLoading = MutableStateFlow(true)

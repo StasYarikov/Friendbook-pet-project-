@@ -55,8 +55,9 @@ fun AddFriendScreen(
 ) {
     val viewModel: HomeScreenViewModel = viewModel(
         factory = FriendsViewModelFactory(
-            (LocalContext.current.applicationContext as App).repository
-        )
+            (LocalContext.current.applicationContext as App).friendsRepository,
+            (LocalContext.current.applicationContext as App).chatMessagesRepository,
+            )
     )
 
     var name by remember { mutableStateOf("") }
