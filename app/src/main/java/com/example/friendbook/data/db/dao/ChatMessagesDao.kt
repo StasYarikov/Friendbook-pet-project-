@@ -29,4 +29,7 @@ interface ChatMessagesDao {
 
     @Query("SELECT * FROM chat_messages WHERE id = :messageId")
     suspend fun getMessageById(messageId: Long): ChatMessage?
+
+    @Query("DELETE FROM chat_messages")
+    suspend fun deleteAllMessages(): Int
 }
