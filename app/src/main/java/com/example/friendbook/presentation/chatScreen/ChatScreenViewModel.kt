@@ -1,9 +1,11 @@
 package com.example.friendbook.presentation.chatScreen
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.friendbook.data.entity.ChatMessage
+import com.example.friendbook.domain.repository.ApiResult
 import com.example.friendbook.domain.repository.ChatMessagesRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -57,11 +59,27 @@ class ChatScreenViewModel(
 
                 val response = repository.sendMessage(messageText)
 
-                repository.addMessage(response, false)
-
+                when(response) {
+                    is ApiResult.Success -> repository.addMessage(response.data.choices.first().message.content, false)
+                    is ApiResult.Error -> _error.value = "Ошибка: ${response.exception.message}"
+                }
                 loadMessages()
             } catch (e: Exception) {
                 _error.value = "Ошибка: ${e.message}"
+            } finally {
+                _isLoading.value = false
+            }
+        }
+    }
+
+    fun clearMessageHistory() {
+        _isLoading.value = true
+        viewModelScope.launch {
+            try {
+                repository.deleteAllMessages()
+                loadMessages()
+            } catch (e: Exception) {
+                _error.value = "Ошибка загрузки: ${e.message}"
             } finally {
                 _isLoading.value = false
             }
